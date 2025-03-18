@@ -31,22 +31,39 @@ namespace verifica_triangulo
                 Console.WriteLine("Lado Y: " + ladoY);
                 Console.WriteLine("Valores informados: ");
                 Console.WriteLine("Lado Z: " + ladoZ);
-                
-                bool medidasTrianguloValidas = 
+
+                bool medidasTrianguloValidas =
                     ladoX + ladoY > ladoZ &&
                     ladoX + ladoZ > ladoY &&
                     ladoY + ladoZ > ladoX;
-                
-                if (medidasTrianguloValidas  ==  true)
-                    Console.WriteLine("\nO triângulo é válido!");
-                else
-                    Console.WriteLine("\nOs valores informados não formam um triângulo válido");
 
+                if (medidasTrianguloValidas == true)
+                {
+                    string tipoTriangulo = "Não classificado";
+
+                    if (ladoX == ladoY && ladoY == ladoZ)
+                    {
+                        tipoTriangulo = "Equilátero";
+                    }
+                    else if (ladoX != ladoY && ladoY != ladoZ && ladoX != ladoZ)
+                    {
+                        tipoTriangulo = "Escaleno";
+                    }
+                    else
+                    {
+                        tipoTriangulo = "Isósceles";
+                    }
+                    Console.WriteLine($"O triângulo é {tipoTriangulo}");
+                }
+                else
+                {
+                    Console.WriteLine("\nOs valores informados não formam um triângulo válido");
+                }
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Deseja continuar? (s/N) ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
-                if( opcaoContinuar != "S")
+                if (opcaoContinuar != "S")
                     break;
             }
         }
