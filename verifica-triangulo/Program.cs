@@ -32,6 +32,16 @@ namespace verifica_triangulo
                 Console.WriteLine("Valores informados: ");
                 Console.WriteLine("Lado Z: " + ladoZ);
                 
+                bool medidasTrianguloValidas = 
+                    ladoX + ladoY > ladoZ &&
+                    ladoX + ladoZ > ladoY &&
+                    ladoY + ladoZ > ladoX;
+                
+                if (medidasTrianguloValidas  ==  true)
+                    Console.WriteLine("\nO triângulo é válido!");
+                else
+                    Console.WriteLine("\nOs valores informados não formam um triângulo válido");
+
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Deseja continuar? (s/N) ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
