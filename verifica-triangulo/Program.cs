@@ -14,14 +14,21 @@ namespace verifica_triangulo
                 Console.WriteLine("Classsificador de triângulos");
                 Console.WriteLine("-----------------------------------------");
 
+                int ladoX, ladoY, ladoZ;
+
+                while (true)
+                {
+                    Console.Write("Informe o valor do lado X: ");
+                    bool conseguiuConverter = int.TryParse(Console.ReadLine(), out ladoX);
+                    if (conseguiuConverter)
+                        break;
+                }
+         
                 Console.Write("Informe o valor do lado X: ");
-                int ladoX = Convert.ToInt32(Console.ReadLine());
+                ladoY = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Informe o valor do lado X: ");
-                int ladoY = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Informe o valor do lado X: ");
-                int ladoZ = Convert.ToInt32(Console.ReadLine());
+                ladoZ = Convert.ToInt32(Console.ReadLine());
 
                 Console.Clear();
                 Console.WriteLine("-----------------------------------------");
@@ -53,7 +60,7 @@ namespace verifica_triangulo
                     {
                         tipoTriangulo = "Isósceles";
                     }
-                    Console.WriteLine($"O triângulo é {tipoTriangulo}");
+                    Console.WriteLine($"\nO triângulo é {tipoTriangulo}");
                 }
                 else
                 {
